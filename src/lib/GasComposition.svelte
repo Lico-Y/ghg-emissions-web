@@ -40,7 +40,7 @@
 
     onMount(async () => {
         data = await d3.csv(
-            "/data/gas_sector_2024.csv",
+            `${import.meta.env.BASE_URL}data/gas_sector_2024.csv`,
             d => ({
                 sector: d["Sector Classification"],
                 gas: d["Gas Type"],

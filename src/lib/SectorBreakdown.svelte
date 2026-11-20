@@ -39,8 +39,9 @@
 
     onMount(async () => {
         try {
-            const rows = await d3.csv("/data/ghg_by_sector.csv");
-
+            const rows = await d3.csv(
+                        `${import.meta.env.BASE_URL}data/ghg_by_sector.csv`
+            );
             const filtered = rows
                 .filter(d =>
                     d["Greenhouse Gas"] ===

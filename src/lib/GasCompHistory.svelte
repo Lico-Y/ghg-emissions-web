@@ -7,7 +7,7 @@
     let tooltip = $state(null);
     let error = $state("");
 
-    const csvPath = "/data/ghg_by_sector.csv";
+    const csvPath = `${import.meta.env.BASE_URL}data/ghg_by_sector.csv`;
 
     const gases = [
         { name: "CO₂", key: "CO2", color: "#44c0c0ca" },
