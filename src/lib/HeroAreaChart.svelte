@@ -5,11 +5,14 @@
     let data = $state([]);
     let hovered = $state(null);
 
-    onMount(async () => {
-        data = await d3.csv('/data/annual_total_emissions.csv', d => ({
+   onMount(async () => {
+    data = await d3.csv(
+        `${import.meta.env.BASE_URL}data/annual_total_emissions.csv`,
+        d => ({
             year: +d["Year"],
             emissions: +d["Emissions (kilotonnes)"]
-        }));
+        })
+    );
     });
 
     const width = 900;
